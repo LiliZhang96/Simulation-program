@@ -25,6 +25,6 @@ figure(1)
 subplot(2,1,2);
 plot(Tf,s_11,'r',Tf,s_21,'b',Tf,s_31,'-.r',Tf,s_41,'-.b',Tf,y1,'k',Tf,y2,'k',Tf,y3,'-.k',Tf,y4,'-.k','linewidth',1);
 legend('$h_{1,1}$','$h_{2,1}$','$h_{3,1}$','$h_{4,1}$','0.05','-0.05','0.5','-0.5');
-title('(b) Under the controller designed in [59]')
+title('(b) Under the controller designed in [58]')
 xlabel(' Time(sec)');
 set(gca,'FontSize',10,'Fontname', 'Times New Roman');
