@@ -13,6 +13,7 @@ figure(1)
 plot(sol.x,sol.y(5,:),'r',sol.x,sol.y(18,:),'b',sol.x,sol.y(28,:),'-.r',sol.x,sol.y(38,:),'-.b',sol.x,sol.yp(9,:),'-.k','linewidth',1);
 xlabel(' Time(sec)');
 legend('$y_{1}$', '$y_{2}$', '$y_{3}$', '$y_{4}$','$y_{d_1}$')
+set(gca,'FontSize',10,'Fontname', 'Times New Roman');
 
 
 figure(2)
@@ -33,6 +34,7 @@ figure(4)
 plot(sol.x,sol.y(4,:),'r',sol.x,sol.y(17,:),'b',sol.x,sol.y(27,:),'-.r',sol.x,sol.y(37,:),'-.b','linewidth',1);
 xlabel(' Time(sec)');
 legend('$e_{1,2}$', '$e_{2,2}$', '$e_{3,2}$', '$e_{4,2}$')
+set(gca,'FontSize',10,'Fontname', 'Times New Roman');
 
 
 figure(5)
@@ -44,12 +46,14 @@ figure(6)
 plot(sol.x,sol.y(8,:),'r',sol.x,sol.y(21,:),'b',sol.x,sol.y(31,:),'-.r',sol.x,sol.y(41,:),'-.b','linewidth',1);
 xlabel(' Time(sec)');
 legend('$\hat{\varphi}_{1,2}$','$\hat{\varphi}_{2,2}$','$\hat{\varphi}_{3,2}$','$\hat{\varphi}_{4,2}$')
+set(gca,'FontSize',10,'Fontname', 'Times New Roman');
 
 
 figure(7)
 plot(sol.x,sol.yp(10,:),'r',sol.x,sol.yp(22,:),'b',sol.x,sol.yp(32,:),'-.r',sol.x,sol.yp(42,:),'-.b','linewidth',1);
 xlabel(' Time(sec)');
 legend('$u_1$','$u_2$','$u_3$','$u_4$')
+set(gca,'FontSize',10,'Fontname', 'Times New Roman');
 
 function dydt=tys(t,y,Z,xi,l,rho,beta)
 ylag1 = Z(:,1);
