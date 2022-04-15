@@ -7,7 +7,7 @@ d=[0.5;0.5;0]*2;
 k=[30;15;15];
 lags=[1,1,1,1]*2.5; 
 
-sol=dde23(@tys,lags,@tyshist,[0,30],[],lam,l,d,k);
+sol=dde23(@tys,lags,@tyshist,[0,40],[],lam,l,d,k);
 
 figure(1)
 plot(sol.x,sol.y(7,:),'r',sol.x,sol.y(22,:),'-.r',sol.x,sol.y(34,:),'-b',sol.x,sol.y(46,:),'-.b',sol.x,sol.yp(11,:),'-.k','linewidth',1);
