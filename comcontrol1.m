@@ -1,4 +1,4 @@
-function [dx,x_11,x_12,x_21,x_22,x_31,x_32,x_41,x_42,s_11,s_21,s_31,s_41]=comcontrol1(t,x)
+function [dx,x_11,x_12,x_21,x_22,x_31,x_32,x_41,x_42,s_11,s_21,s_31,s_41,u1,u2,u3,u4]=comcontrol1(t,x)
 x_11=x(1);
 x_12=x(2);
 x_21=x(3);
@@ -23,11 +23,15 @@ alphabar_12=x(21);
 alphabar_22=x(22);
 alphabar_32=x(23);
 alphabar_42=x(24);
+u_1=x(25);
+u_2=x(26);
+u_3=x(27);
+u_4=x(28);
 
 a12=1;a32=1;a43=1;a20=1;d_1=1; d_2=0;d_3=1;d_4=1;
 
-c_11=1.5;c_21=1;c_31=6;c_41=6;
-c_12=5;c_22=0.3;c_32=2;c_42=2;
+c_11=5;c_21=5;c_31=5;c_41=5;
+c_12=5;c_22=5;c_32=5;c_42=5;
 tau_1=0.5;tau_2=0.6;tau_3=0.4;tau_4=0.4;
 k_11=4;k_12=10;k_21=10;k_22=30;k_31=10;k_32=10;k_41=2.85;k_42=13;
 k1_b1=0.5; gamma_11=100;gamma_12=100;gamma_21=5;gamma_22=5;gamma_31=100;gamma_32=100;gamma_41=100;gamma_42=100;
@@ -189,4 +193,4 @@ alphabar_42dot=(alpha_42-alphabar_42)/lambda_42;
 
 theta_j21=0;
     tt=t
-dx=[x_11_dot;x_12_dot;x_21_dot;x_22_dot;x_31_dot;x_32_dot;x_41_dot;x_42_dot;theta_dot11;theta_dot21;theta_dot31;theta_dot41;theta_dot12;theta_dot22;theta_dot32;theta_dot42;theta_dotj12;theta_dotj21;theta_dotj32;theta_dotj43;alphabar_12dot;alphabar_22dot;alphabar_32dot;alphabar_42dot];
+dx=[x_11_dot;x_12_dot;x_21_dot;x_22_dot;x_31_dot;x_32_dot;x_41_dot;x_42_dot;theta_dot11;theta_dot21;theta_dot31;theta_dot41;theta_dot12;theta_dot22;theta_dot32;theta_dot42;theta_dotj12;theta_dotj21;theta_dotj32;theta_dotj43;alphabar_12dot;alphabar_22dot;alphabar_32dot;alphabar_42dot;u1;u2;u3;u4];
