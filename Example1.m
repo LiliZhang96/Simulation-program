@@ -7,7 +7,7 @@ rho=[1;1];
 
 lags=[1,1,1,1]*2.5;
 
-sol=dde23(@tys,lags,@tyshist,[0,30],[],xi,l,rho,beta);
+sol=dde23(@tys,lags,@tyshist,[0,40],[],xi,l,rho,beta);
 
 figure(1)
 plot(sol.x,sol.y(5,:),'r',sol.x,sol.y(18,:),'b',sol.x,sol.y(28,:),'-.r',sol.x,sol.y(38,:),'-.b',sol.x,sol.yp(9,:),'-.k','linewidth',1);
