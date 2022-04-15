@@ -1,17 +1,17 @@
 function tys
 
-lam=[1;5;5];
+lam=[5;5;5];
 
-l=-[8.6485;336.2915;-290.6175];
+l=-[1.6485;178.2915;-290.6175];
 d=[0.5;0.5;0]*2;
 k=[5;5;5];
-Tf=[0:0.001:30];
+Tf=[0:0.001:40];
 L1=length(Tf);
 
 lags=[1,1,1,1]*2.5; 
 
 
-sol=dde23(@tys,lags,@tyshist,[0,30],[],lam,l,d,k);
+sol=dde23(@tys,lags,@tyshist,[0,40],[],lam,l,d,k);
 
 
 figure(2)
@@ -20,6 +20,14 @@ plot(sol.x,sol.yp(13,:),'r',sol.x,sol.yp(27,:),'-.r',sol.x,sol.yp(39,:),'b',sol.
 xlabel(' Time(sec)');
 title('(b) Under the controller designed in [59]')
 legend('$h_{1,1}$','$h_{2,1}$','$h_{3,1}$','$h_{4,1}$','0.05','-0.05')
+set(gca,'FontSize',10,'Fontname', 'Times New Roman');
+
+figure(8)
+subplot(2,1,2);
+plot(sol.x,sol.yp(12,:),'r',sol.x,sol.yp(26,:),'-.r',sol.x,sol.yp(38,:),'-b',sol.x,sol.yp(50,:),'-.b','linewidth',1);
+xlabel(' Time(sec)');
+legend('$u_1$','$u_2$','$u_3$','$u_4$')
+title('(b) The control input in [59]')
 set(gca,'FontSize',10,'Fontname', 'Times New Roman');
 
 function dydt=tys(t,y,Z,lam,l,d,k)
